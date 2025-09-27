@@ -43,4 +43,66 @@
     <version>5.1.2</version>
 </dependency>
   </dependencies>
+  
+  <profiles>
+  <profile>
+  <id>FRT</id>
+  
+  <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version> <!-- Use a recent stable version -->
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>suite_full_regression_test.xml</suiteXmlFile>
+                        <!-- You can add multiple <suiteXmlFile> entries for different XML files -->
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    </profile>
+    
+    <profile>
+  <id>RT</id>
+  
+  <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version> <!-- Use a recent stable version -->
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>suite_regression_test.xml</suiteXmlFile>
+                        <!-- You can add multiple <suiteXmlFile> entries for different XML files -->
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    </profile>
+    
+    <profile>
+  <id>ST</id>
+  
+  <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version> <!-- Use a recent stable version -->
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>suite_smoke_test.xml</suiteXmlFile>
+                        <!-- You can add multiple <suiteXmlFile> entries for different XML files -->
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    </profile>
+  </profiles>
 </project>

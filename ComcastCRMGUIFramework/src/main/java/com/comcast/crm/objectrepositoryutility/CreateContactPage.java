@@ -16,6 +16,9 @@ public class CreateContactPage {
 	@FindBy(name = "lastname")
 	WebElement lastName;
 	
+	@FindBy(id="mobile")
+	WebElement mobEdit;
+	
 	@FindBy(xpath = "(//input[@title='Save [Alt+S]'])[position()=1]")
 	WebElement saveButton;
 
@@ -23,12 +26,12 @@ public class CreateContactPage {
 		return lastName;
 	}
 
+	public WebElement getMobEdit() {
+		return mobEdit;
+	}
+	
 	public WebElement getSaveButton() {
 		return saveButton;
 	}
-	
-	
-	
-	
 
 }

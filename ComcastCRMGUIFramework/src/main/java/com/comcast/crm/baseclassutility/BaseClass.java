@@ -37,12 +37,13 @@ public class BaseClass {
 		System.out.println("==connect to DB, Report Config==");
 //		dlib.getDbconnection();
 	}
-	@Parameters("browser")
+//	@Parameters("browser")
 	@BeforeClass
-	public void configBC(String browser) throws IOException, InterruptedException {
+//	public void configBC(String browser) throws IOException, InterruptedException {
+	public void configBC() throws IOException, InterruptedException {
 		System.out.println("==Launch the BROWSER==");
-		String BROWSER = browser;
-//		String BROWSER = flib.getDataFromPropertiesFile("browser");
+//		String BROWSER = browser;
+		String BROWSER = flib.getDataFromPropertiesFile("browser");
 		if(BROWSER.equals("chrome")) {
 			driver = new ChromeDriver();
 		}else {

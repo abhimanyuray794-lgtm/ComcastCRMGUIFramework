@@ -11,7 +11,7 @@ import com.comcast.crm.objectrepositoryutility.CreateContactPage;
 import com.comcast.crm.objectrepositoryutility.HomePage;
 public class CreateContactTest extends BaseClass{
 	
-	@Test
+	@Test (groups = "smoke")
 	public void createContactTest() throws EncryptedDocumentException, IOException {
 		String lastName = elib.getDataFromExcel("contact", 1, 2) + jlib.getRandomNumber();
 		
@@ -26,4 +26,22 @@ public class CreateContactTest extends BaseClass{
 		cco.getSaveButton().click();
 		
 		}
+	
+	@Test (groups = "regression")
+	public void createContactWithPhone() throws EncryptedDocumentException, IOException {
+		String lastName = elib.getDataFromExcel("contact", 1, 2) + jlib.getRandomNumber();
+		String mobEdit = elib.getDataFromExcel("contact", 1, 3);
+		
+		HomePage hp = new HomePage(driver);
+		hp.getContactLink().click();
+		
+		ContactsPage cp = new ContactsPage(driver);
+		cp.getPlusButton().click();
+		
+		CreateContactPage cco = new CreateContactPage(driver);
+		cco.getLastName().sendKeys(lastName);
+		cco.getMobEdit().sendKeys(mobEdit);
+		cco.getSaveButton().click();
+		
+	}
 }
