@@ -44,10 +44,11 @@ public class BaseClass {
 		String BROWSER = System.getProperty("browser");
 		if (BROWSER == null) {
 			BROWSER = test.getParameter("browser");
-		}
-		if (BROWSER == null) {
+			if (BROWSER == null) {
 			BROWSER = flib.getDataFromPropertiesFile("browser");
+			}
 		}
+		
 		if (BROWSER.equals("chrome")) {
 			driver = new ChromeDriver();
 		} else {
