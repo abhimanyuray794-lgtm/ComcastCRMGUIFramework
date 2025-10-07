@@ -5,7 +5,6 @@
     <classes>
       <class name="com.comcast.crm.contactmodulewithbaseclass.CreateContactTest">
         <methods>
-          <include name="createContactTest"/>
           <include name="configAM"/>
           <include name="configBM"/>
           <include name="configAC"/>

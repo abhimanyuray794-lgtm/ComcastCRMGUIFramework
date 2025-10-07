@@ -44,7 +44,7 @@ public class ListenerImplementingClass implements ITestListener, ISuiteListener 
 	@Override
 	public void onTestStart(ITestResult result) {
 		testName = result.getMethod().getMethodName();
-		test = report.createTest(result.getMethod().getMethodName());
+		test = report.createTest(testName);
 		test.log(Status.INFO, testName+ " get started");
 	}
 
